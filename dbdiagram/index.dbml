@@ -1,0 +1,36 @@
+Table hospital{
+
+  hospitalId string
+  hospitalName string
+  
+  address_id string [not null]
+
+  
+}
+
+Ref: hospital.hospitalId < address.addressId
+
+Table address {
+  addressId string
+  lattitude string
+  longitude string
+  address string
+  createdAt datetime
+  images json [note:"It is just list of string"]
+}
+
+Enum Status {
+  Available
+  OnTrip
+  Maintenance
+  Offline
+}
+Table ambulance {
+  ambulanceId string
+  vehicleNumber  string
+  hospitalId string
+  status Status [not null, default: Status.Available]
+}
+
+Ref: ambulance.ambulanceId> hospital.hospitalId
+
