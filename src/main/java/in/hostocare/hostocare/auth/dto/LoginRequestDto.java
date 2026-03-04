@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class LoginRequest {
+public class LoginRequestDto {
     @NotBlank(message = "Email is required")
     private String email;
     

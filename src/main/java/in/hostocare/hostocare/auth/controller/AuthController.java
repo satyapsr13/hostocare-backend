@@ -1,7 +1,7 @@
 package in.hostocare.hostocare.auth.controller;
 
-import in.hostocare.hostocare.auth.dto.LoginRequest;
-import in.hostocare.hostocare.auth.dto.LoginResponse;
+import in.hostocare.hostocare.auth.dto.LoginRequestDto;
+import in.hostocare.hostocare.auth.dto.LoginResponseDto;
 import in.hostocare.hostocare.auth.service.AuthenticationService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,14 +17,14 @@ public class AuthController {
     private AuthenticationService authenticationService;
     
     @PostMapping("/login")
-    public ResponseEntity<LoginResponse> login(@Valid @RequestBody LoginRequest loginRequest) {
-        LoginResponse response = authenticationService.login(loginRequest);
+    public ResponseEntity<LoginResponseDto> login(@Valid @RequestBody LoginRequestDto loginRequest) {
+        LoginResponseDto response = authenticationService.login(loginRequest);
         return ResponseEntity.ok(response);
     }
     
     @PostMapping("/logout")
-    public ResponseEntity<LoginResponse> logout(@Valid @RequestBody LoginRequest loginRequest) {
-        LoginResponse response = authenticationService.login(loginRequest);
+    public ResponseEntity<LoginResponseDto> logout(@Valid @RequestBody LoginRequestDto loginRequest) {
+        LoginResponseDto response = authenticationService.login(loginRequest);
         return ResponseEntity.ok(response);
     }
 }
