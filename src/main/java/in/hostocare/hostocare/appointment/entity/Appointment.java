@@ -4,6 +4,7 @@ import java.time.Instant;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
@@ -15,6 +16,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Entity
 @Data
 @Table(name = "appointment")
 @NoArgsConstructor
