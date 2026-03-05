@@ -34,3 +34,12 @@ Table ambulance {
 
 Ref: ambulance.ambulanceId> hospital.hospitalId
 
+Table appointment {
+  appointmentId int [pk, increment]
+  hospitalId int 
+  doctorId int 
+  userId int 
+  note string
+
+  
+}

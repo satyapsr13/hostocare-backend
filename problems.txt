@@ -1,0 +1,8 @@
+1. Redis distrubute locking -> What will happen if two user book ambulance at same time
+2. Ratelimiting -> Spamming booking
+
+3. Geo-Spatial Queries ->  Selecting nearest ambulance manually is inefficient.
+
+   Tech Options : PostgreSQL + PostGIS, MongoDB GeoJSON, Redis GEO
+
+4. Idempotency Keys-> Mobile apps retry requests.

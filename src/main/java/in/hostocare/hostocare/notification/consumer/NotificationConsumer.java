@@ -6,6 +6,7 @@ import in.hostocare.hostocare.common.kafka.KafkaTopics;
 import in.hostocare.hostocare.notification.model.NotificationEvent;
 
 public class NotificationConsumer {
+
     @KafkaListener(topics = KafkaTopics.NOTIFICATION, groupId = "notification-group")
     public void consume(NotificationEvent event) {
 
