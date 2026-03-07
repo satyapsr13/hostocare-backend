@@ -2,6 +2,7 @@ package in.hostocare.hostocare.appointment.dto;
 
 import java.time.Instant;
 
+import in.hostocare.hostocare.appointment.entity.Appointment;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,4 +20,6 @@ public class AppointmentResponseDto {
     private Instant appointmentStart;
     private Instant appointmentEnd;
     private Instant createdAt;
+
+    
 }

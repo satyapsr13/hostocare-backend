@@ -2,6 +2,7 @@ package in.hostocare.hostocare.appointment.entity;
 
 import java.time.Instant;
 
+import in.hostocare.hostocare.appointment.dto.AppointmentResponseDto;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -43,4 +44,6 @@ public class Appointment {
 
     @Column(nullable = false, updatable = false)
     private Instant createdAt;
+
+    
 }
