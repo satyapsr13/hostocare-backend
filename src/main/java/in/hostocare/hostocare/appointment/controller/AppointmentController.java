@@ -30,10 +30,8 @@ public class AppointmentController {
     }
 
     @GetMapping("list")
-    public ResponseEntity<Object> bookAppointment(
-              @RequestParam Long userId) {
-         
-        return ResponseEntity.status(HttpStatus.CREATED).body(appointmentService.getAppointments(userId));
+    public ResponseEntity<Object> getAppointments(in.hostocare.hostocare.appointment.dto.AppointmentFilterDto filter) {
+        return ResponseEntity.status(HttpStatus.OK).body(appointmentService.getAppointments(filter));
     }
 
     @GetMapping()

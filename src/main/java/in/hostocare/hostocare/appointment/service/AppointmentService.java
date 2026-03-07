@@ -51,13 +51,27 @@ public class AppointmentService {
                 .build();
     }
 
-    public List<Appointment> getAppointments(Long userId) {
-        // Convert DTO to Entity
+    public List<Appointment> getAppointments(in.hostocare.hostocare.appointment.dto.AppointmentFilterDto filter) {
+        org.springframework.data.jpa.domain.Specification<Appointment> spec = (root, query, cb) -> {
+            java.util.List<jakarta.persistence.criteria.Predicate> predicates = new java.util.ArrayList<>();
+            if (filter.getHospitalId() != null) {
+                predicates.add(cb.equal(root.get("hospitalId"), filter.getHospitalId()));
+            }
+            if (filter.getDoctorId() != null) {
+                predicates.add(cb.equal(root.get("doctorId"), filter.getDoctorId()));
+            }
+            if (filter.getPatientId() != null) {
+                predicates.add(cb.equal(root.get("patientId"), filter.getPatientId()));
+            }
+            if (filter.getStartDate() != null) {
+                predicates.add(cb.greaterThanOrEqualTo(root.get("appointmentStart"), filter.getStartDate()));
+            }
+            if (filter.getEndDate() != null) {
+                predicates.add(cb.lessThanOrEqualTo(root.get("appointmentEnd"), filter.getEndDate()));
+            }
+            return cb.and(predicates.toArray(new jakarta.persistence.criteria.Predicate[0]));
+        };
 
-        // Publish Kafka event for appointment created
-        // kafkaTemplate.send(KafkaTopics.APPOINTMENT_CREATED, savedAppointment);
-
-        // Convert Entity to Response DTO
-        return appointmentRepository.findAll();
+        return appointmentRepository.findAll(spec);
     }
 }
