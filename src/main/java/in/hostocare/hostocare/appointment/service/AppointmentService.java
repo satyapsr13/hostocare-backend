@@ -36,7 +36,7 @@ public class AppointmentService {
         Appointment savedAppointment = appointmentRepository.save(appointment);
 
         // Publish Kafka event for appointment created
-        kafkaTemplate.send(KafkaTopics.APPOINTMENT_CREATED, savedAppointment);
+        // kafkaTemplate.send(KafkaTopics.APPOINTMENT_CREATED, savedAppointment);
 
         // Convert Entity to Response DTO
         return AppointmentResponseDto.builder()
