@@ -1,6 +1,7 @@
 package in.hostocare.hostocare.appointment.service;
 
 import java.time.Instant;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -48,5 +49,15 @@ public class AppointmentService {
                 .appointmentEnd(savedAppointment.getAppointmentEnd())
                 .createdAt(savedAppointment.getCreatedAt())
                 .build();
+    }
+
+    public List<Appointment> getAppointments(Long userId) {
+        // Convert DTO to Entity
+
+        // Publish Kafka event for appointment created
+        // kafkaTemplate.send(KafkaTopics.APPOINTMENT_CREATED, savedAppointment);
+
+        // Convert Entity to Response DTO
+        return appointmentRepository.findAll();
     }
 }

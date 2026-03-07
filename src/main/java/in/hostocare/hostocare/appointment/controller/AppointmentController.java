@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import in.hostocare.hostocare.appointment.dto.AppointmentCreateDto;
@@ -26,6 +27,13 @@ public class AppointmentController {
             @Valid @RequestBody AppointmentCreateDto appointmentCreateDto) {
         AppointmentResponseDto response = appointmentService.bookAppointment(appointmentCreateDto);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    }
+
+    @GetMapping("list")
+    public ResponseEntity<Object> bookAppointment(
+              @RequestParam Long userId) {
+         
+        return ResponseEntity.status(HttpStatus.CREATED).body(appointmentService.getAppointments(userId));
     }
 
     @GetMapping()

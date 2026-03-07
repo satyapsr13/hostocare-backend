@@ -1,0 +1,96 @@
+{
+  "info": {
+    "_postman_id": "a0854390-c924-4c96-b536-0e086b596f7a",
+    "name": "Hostocare",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "appointment",
+      "item": [
+        {
+          "name": "http://127.0.0.1:8080/api/appointment/list?userId=12",
+          "id": "00c89c5e-e9cb-41ff-bc8f-d2d4efd7bc27",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"docterId\": \"DOC12345\",\r\n  \"patientId\": \"PAT67890\",\r\n  \"hospitalId\": \"HOSP001\",\r\n  \"appointmentStartTime\": \"2026-03-07T10:00:00Z\",\r\n  \"appointmentEndTime\": \"2026-03-07T10:30:00Z\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8080/api/appointment/list?userId=12",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "appointment",
+                "list"
+              ],
+              "query": [
+                {
+                  "key": "userId",
+                  "value": "12",
+                  "uuid": "9e09782f-6b5b-4408-83e5-e91c81ca13b7"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://127.0.0.1:8080/api/appointment/book",
+          "id": "794f4c33-cf61-4f4e-b16e-88a3bc2d22ec",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"docterId\": \"12345\",\r\n  \"patientId\": \"67890\",\r\n  \"hospitalId\": \"123456\",\r\n  \"appointmentStartTime\": \"2026-03-07T10:00:00Z\",\r\n  \"appointmentEndTime\": \"2026-03-07T10:30:00Z\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8080/api/appointment/book",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "appointment",
+                "book"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "27733c09-ed78-4ed3-8936-23e7ee31d7ad"
+    }
+  ]
+}
