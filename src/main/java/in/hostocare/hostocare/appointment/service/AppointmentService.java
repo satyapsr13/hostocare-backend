@@ -1,17 +1,21 @@
 package in.hostocare.hostocare.appointment.service;
 
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 import in.hostocare.hostocare.appointment.dto.AppointmentCreateDto;
+import in.hostocare.hostocare.appointment.dto.AppointmentFilterDto;
 import in.hostocare.hostocare.appointment.dto.AppointmentResponseDto;
 import in.hostocare.hostocare.appointment.entity.Appointment;
 import in.hostocare.hostocare.appointment.repository.AppointmentRepository;
-import in.hostocare.hostocare.common.kafka.KafkaTopics;
+// Core Jakarta Persistence imports for Spring Boot 3
+import jakarta.persistence.criteria.Predicate;
 
 @Service
 public class AppointmentService {
@@ -51,9 +55,9 @@ public class AppointmentService {
                 .build();
     }
 
-    public List<Appointment> getAppointments(in.hostocare.hostocare.appointment.dto.AppointmentFilterDto filter) {
-        org.springframework.data.jpa.domain.Specification<Appointment> spec = (root, query, cb) -> {
-            java.util.List<jakarta.persistence.criteria.Predicate> predicates = new java.util.ArrayList<>();
+    public List<Appointment> getAppointments(AppointmentFilterDto filter) {
+        Specification<Appointment> spec = (root, query, cb) -> {
+            List<Predicate> predicates = new  ArrayList<>();
             if (filter.getHospitalId() != null) {
                 predicates.add(cb.equal(root.get("hospitalId"), filter.getHospitalId()));
             }
@@ -69,7 +73,7 @@ public class AppointmentService {
             if (filter.getEndDate() != null) {
                 predicates.add(cb.lessThanOrEqualTo(root.get("appointmentEnd"), filter.getEndDate()));
             }
-            return cb.and(predicates.toArray(new jakarta.persistence.criteria.Predicate[0]));
+            return cb.and(predicates.toArray(new  Predicate[0]));
         };
 
         return appointmentRepository.findAll(spec);
