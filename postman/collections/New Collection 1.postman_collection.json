@@ -1,0 +1,266 @@
+{
+  "info": {
+    "_postman_id": "6e8e9e96-b9be-4140-95ea-42162580fd7b",
+    "name": "Yufin Merchant App",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "PO",
+      "item": [
+        {
+          "name": "Create Order",
+          "id": "6f5e6a2f-1b11-47ec-b166-55830e48ec62",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"orderTimestamp\": \"2026-03-17T17:28:28.164596Z\",\r\n  \"isAssistedOrder\": true,\r\n  \"discount\": 0.0,\r\n  \"deliveryFee\": 0.0,\r\n  \"assistantMarkup\": 0.0,\r\n  \"shopperAccount\": {\r\n    \"shopperAccountId\": null,\r\n    \"assistantId\": \"6283162ad05148df14b87946\",\r\n    \"phoneNumber\": \"\",\r\n    \"fullName\": \"\",\r\n    \"shopperStoreName\": \"\",\r\n    \"shopperType\": \"WHOLESALE_STORE_SHOPPER\"\r\n  },\r\n  \"shippingAddress\": {\r\n    \"addressTitle\": \"\",\r\n    \"addressLine1\": \"\",\r\n    \"addressLine2\": \"\",\r\n    \"landmark\": \"\",\r\n    \"locality\": \"\",\r\n    \"city\": \"\",\r\n    \"contactNumber\": \"\",\r\n    \"alternateContactNumber\": \"\",\r\n    \"latitude\": 0.0,\r\n    \"longitude\": 0.0,\r\n    \"addressPictures\": null\r\n  },\r\n  \"cartSummary\": null,\r\n  \"merchantStoreId\": \"6639c1fe4d30777af30c028c\",\r\n  \"fulfilmentType\": \"DELIVERY\",\r\n  \"creditsRedeemAmount\": 0.0,\r\n  \"products\": [\r\n     {\r\n        \"storeProductId\":\"69c2afec2d4eb625c9f2aec0\",\r\n        \"variantId\":null,\r\n        \"bundleId\":null,\r\n        \"cartQty\":10,\r\n        \"price\":350\r\n     }\r\n  ],\r\n  \"subTotal\": 63.9,\r\n  \"tax\": 0.0,\r\n  \"couponDiscount\": 0.0,\r\n  \"requestedDeliveryDate\": \"2026-03-20T18:30:00.000Z\",\r\n  \"total\": 63.9,\r\n  \"notes\": \"\",\r\n  \"couponCode\": \"\",\r\n  \"paymentMode\": \"CASH\",\r\n  \"latitude\": 0.0,\r\n  \"longitude\": 0.0\r\n}\r\n ",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5009/WholesalePurchaseOrder/v2/cart-summary",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5009",
+              "path": [
+                "WholesalePurchaseOrder",
+                "v2",
+                "cart-summary"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Order v4",
+          "id": "cac989af-9d6a-47be-9f2f-a78af7d98d22",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "App-Version",
+                "value": "10.1.1",
+                "type": "text",
+                "uuid": "7bdca6ca-41fd-4567-a82b-ef697bcad6a8"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"orderTimestamp\": \"2026-03-17T17:28:28.164596Z\",\r\n    \"isAssistedOrder\": false,\r\n    \"discount\": 0.0,\r\n    \"deliveryFee\": 0.0,\r\n    \"assistantMarkup\": 0.0,\r\n    \"shopperAccount\": {\r\n        \"shopperAccountId\": \"629b129cc403bad3610a1623\",\r\n        \"assistantId\": \"6283162ad05148df14b87946\",\r\n        \"phoneNumber\": \"919545808460\",\r\n        \"fullName\": \"Kushan\",\r\n        \"shopperStoreName\": \"Mobile Store 1\",\r\n        \"shopperType\": \"WHOLESALE_STORE_SHOPPER\"\r\n    },\r\n   \r\n    \"cartSummary\": null,\r\n    \"merchantStoreId\": \"6639c1fe4d30777af30c028c\",\r\n    \"fulfilmentType\": \"PICKUP\",\r\n    \"creditsRedeemAmount\": 0.0,\r\n    \"products\": [\r\n      \r\n        {\r\n            \"storeProductId\": \"69c3c2e82d4eb625c9f2aec7\",\r\n            \"variantId\": \"69c3c2e82d4eb625c9f2aec8\",\r\n            \"bundleId\": \"69c4cba52e24a0c612e56119\",\r\n            \"cartQty\": 5,\r\n            \"price\": 149\r\n        }\r\n    ], \r\n    \"requestedDeliveryDate\": \"2026-03-20T18:30:00.000Z\",\r\n    \"total\": 63.9,\r\n    \"notes\": \"\", \r\n    \"paymentMode\": \"CASH\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5009/WholesalePurchaseOrder/v4/create",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5009",
+              "path": [
+                "WholesalePurchaseOrder",
+                "v4",
+                "create"
+              ],
+              "query": [
+                {
+                  "key": "App-Version",
+                  "value": "10.1.1",
+                  "type": "text",
+                  "uuid": "4eaa77f3-b926-40e1-b26a-0e31ffc96c25",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "e69f761b-cfa8-4164-9177-f5ab1a76ef55",
+              "name": "Create Order v4",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "App-Version",
+                    "value": "10.1.1",
+                    "type": "text",
+                    "uuid": "7bdca6ca-41fd-4567-a82b-ef697bcad6a8"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"orderTimestamp\": \"2026-03-17T17:28:28.164596Z\",\r\n    \"isAssistedOrder\": false,\r\n    \"discount\": 0.0,\r\n    \"deliveryFee\": 0.0,\r\n    \"assistantMarkup\": 0.0,\r\n    \"shopperAccount\": {\r\n        \"shopperAccountId\": \"629b129cc403bad3610a1623\",\r\n        \"assistantId\": \"6283162ad05148df14b87946\",\r\n        \"phoneNumber\": \"919545808460\",\r\n        \"fullName\": \"Kushan\",\r\n        \"shopperStoreName\": \"Mobile Store 1\",\r\n        \"shopperType\": \"WHOLESALE_STORE_SHOPPER\"\r\n    },\r\n   \r\n    \"cartSummary\": null,\r\n    \"merchantStoreId\": \"6639c1fe4d30777af30c028c\",\r\n    \"fulfilmentType\": \"PICKUP\",\r\n    \"creditsRedeemAmount\": 0.0,\r\n    \"products\": [\r\n      \r\n        {\r\n            \"storeProductId\": \"69c3c2e82d4eb625c9f2aec7\",\r\n            \"variantId\": \"69c3c2e82d4eb625c9f2aec8\",\r\n            \"bundleId\": \"69c4cba52e24a0c612e56119\",\r\n            \"cartQty\": 5,\r\n            \"price\": 149\r\n        }\r\n    ], \r\n    \"requestedDeliveryDate\": \"2026-03-20T18:30:00.000Z\",\r\n    \"total\": 63.9,\r\n    \"notes\": \"\", \r\n    \"paymentMode\": \"CASH\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5009/WholesalePurchaseOrder/v4/create",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5009",
+                  "path": [
+                    "WholesalePurchaseOrder",
+                    "v4",
+                    "create"
+                  ],
+                  "query": [
+                    {
+                      "key": "App-Version",
+                      "value": "10.1.1",
+                      "type": "text",
+                      "uuid": "4eaa77f3-b926-40e1-b26a-0e31ffc96c25",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 26 Mar 2026 06:17:57 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "Kestrel"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                }
+              ],
+              "cookie": [],
+              "responseTime": "2026-03-26T06:20:33.617Z",
+              "body": "{\n    \"statusCode\": 200,\n    \"message\": \"Successfully created purchase order with bundle support\",\n    \"data\": {\n        \"purchaseOrderId\": \"69c4cedc8b7a75410e08457e\",\n        \"displayOrderId\": \"ORD-20260326061448-8457c\",\n        \"invoiceId\": null,\n        \"orderTimestamp\": \"2026-03-26T06:14:48.368Z\",\n        \"shopperAccount\": {\n            \"shopperAccountId\": \"629b129cc403bad3610a1623\",\n            \"assistantId\": \"6283162ad05148df14b87946\",\n            \"phoneNumber\": \"919545808460\",\n            \"fullName\": \"Kushan\",\n            \"shopperStoreName\": \"Mobile Store 1\",\n            \"shopperType\": \"WHOLESALE_STORE_SHOPPER\",\n            \"assistantInfo\": null\n        },\n        \"shippingAddress\": {\n            \"addressId\": null,\n            \"addressTitle\": \"2km\",\n            \"addressLine1\": \"\",\n            \"addressLine2\": \"\",\n            \"landmark\": \"\",\n            \"locality\": \"\",\n            \"city\": \"\",\n            \"contactNumber\": \"1234567890\",\n            \"alternateContactNumber\": \"1234567890\",\n            \"latitude\": 7.1101592,\n            \"longitude\": 125.6495698,\n            \"addressPictures\": null\n        },\n        \"merchantStoreId\": \"6639c1fe4d30777af30c028c\",\n        \"branchName\": null,\n        \"products\": [\n            {\n                \"storeProductId\": \"69c3c2e82d4eb625c9f2aec7\",\n                \"masterProductId\": null,\n                \"productCategory\": {\n                    \"productCategoryId\": \"66628a14009bfe135fcf72ec\",\n                    \"productCategoryName\": \"Cigarettes\"\n                },\n                \"productUnit\": {\n                    \"productUnitId\": \"65a92fcf31bb10204ce0f266\",\n                    \"productUnitName\": \"pcs\"\n                },\n                \"manufacturer\": null,\n                \"productName\": \"Jeans Variant\",\n                \"merchantStoreId\": \"6639c1fe4d30777af30c028c\",\n                \"cartQuantity\": 0,\n                \"sellingPrice\": 0,\n                \"costPrice\": null,\n                \"barcode\": \"4032900155975\",\n                \"productPictures\": [\n                    {\n                        \"fileName\": \"611f62YtpIL._SY741_.jpg\",\n                        \"filePath\": \"merchant/66b32f47101c4ad8895fa1f1/products/69c2afc72d4eb625c9f2aebc/611f62YtpIL._SY741_.jpg\"\n                    }\n                ],\n                \"haveVariants\": true,\n                \"isFreebieProduct\": false,\n                \"freebieQuantity\": 0,\n                \"productVariants\": [\n                    {\n                        \"id\": \"69c3c2e82d4eb625c9f2aec8\",\n                        \"masterVariantId\": null,\n                        \"barcode\": \"123323211341\",\n                        \"variantName\": \"32 Male\",\n                        \"variantPictures\": [\n                            {\n                                \"fileName\": \"611f62YtpIL._SY741_.jpg\",\n                                \"filePath\": \"merchant/66b32f47101c4ad8895fa1f1/products/69c2afc72d4eb625c9f2aebc/611f62YtpIL._SY741_.jpg\"\n                            }\n                        ],\n                        \"cartQuantity\": 500,\n                        \"sellingPrice\": 149,\n                        \"costPrice\": null,\n                        \"productUnit\": {\n                            \"productUnitId\": \"65a0e3babc6c78e4de6265a7\",\n                            \"productUnitName\": \"bottle\"\n                        },\n                        \"bundleId\": null,\n                        \"bundleName\": null,\n                        \"bundleQuantity\": null,\n                        \"bundlePrice\": null,\n                        \"bundleUnit\": null,\n                        \"isBundleProduct\": false\n                    }\n                ],\n                \"bundleId\": null,\n                \"bundleName\": null,\n                \"bundleQuantity\": null,\n                \"bundlePrice\": null,\n                \"bundleUnit\": null,\n                \"isBundleProduct\": false,\n                \"totalValueInCart\": 0,\n                \"productCompanyAndBrandInfo\": null\n            }\n        ],\n        \"cartBundleProducts\": null,\n        \"subTotal\": 74500,\n        \"tax\": 0,\n        \"couponDiscount\": 0,\n        \"deliveryCharges\": 0,\n        \"total\": 74500,\n        \"pickerNote\": null,\n        \"driverNote\": null,\n        \"adminNote\": null,\n        \"orderStatus\": \"PENDING_CONFIRMATION\",\n        \"fulfilmentType\": \"PICKUP\",\n        \"paymentImage\": null,\n        \"notes\": \"\",\n        \"atRisk\": false,\n        \"appliedCouponInfo\": null,\n        \"purchaseOrderType\": \"WHOLESALE_PURCHASE_ORDER\",\n        \"paymentMode\": \"CASH\",\n        \"purchaseOrderProcessAssigneeInfo\": null,\n        \"purchaseOrderPackingAssigneeInfo\": null,\n        \"deliveryPartnerInfo\": null,\n        \"isOrderPartiallyFulfilled\": false,\n        \"finalProductList\": null,\n        \"purchaseOrderStatusHistory\": [\n            {\n                \"sequence\": 1,\n                \"statusCode\": \"PENDING_CONFIRMATION\",\n                \"timestamp\": \"2026-03-26T06:14:47.93Z\",\n                \"statusAssigner\": {\n                    \"userId\": \"SYSTEM\",\n                    \"assignmentTimestamp\": \"2026-03-26T06:14:47.93Z\",\n                    \"fullName\": \"System\",\n                    \"phoneNumber\": null,\n                    \"vehiclePlateNumber\": null\n                },\n                \"statusTitle\": \"Order Placed\",\n                \"isStatusConfirmed\": true\n            },\n            {\n                \"sequence\": 2,\n                \"statusCode\": \"PROCESSING\",\n                \"timestamp\": null,\n                \"statusAssigner\": null,\n                \"statusTitle\": \"Picking\",\n                \"isStatusConfirmed\": null\n            },\n            {\n                \"sequence\": 3,\n                \"statusCode\": \"PACKING_ORDER\",\n                \"timestamp\": null,\n                \"statusAssigner\": null,\n                \"statusTitle\": \"Packing\",\n                \"isStatusConfirmed\": null\n            },\n            {\n                \"sequence\": 4,\n                \"statusCode\": \"READY_TO_PICKUP\",\n                \"timestamp\": null,\n                \"statusAssigner\": null,\n                \"statusTitle\": \"Ready to Pickup\",\n                \"isStatusConfirmed\": null\n            },\n            {\n                \"sequence\": 5,\n                \"statusCode\": \"CLOSED\",\n                \"timestamp\": null,\n                \"statusAssigner\": null,\n                \"statusTitle\": \"Completed\",\n                \"isStatusConfirmed\": null\n            }\n        ],\n        \"orderCompletionTimestamp\": null,\n        \"isLongDistanceOrder\": false,\n        \"isFavorite\": false,\n        \"isAssistedOrder\": false,\n        \"assistantMarkup\": 0,\n        \"orderPriority\": null,\n        \"isORRequired\": false,\n        \"isOrderPaused\": false,\n        \"orderPauseReason\": null,\n        \"discount\": 0,\n        \"deliveryDiscount\": 0,\n        \"cartSummary\": null,\n        \"appliedDiscountRuleReference\": null,\n        \"appliedDiscountRuleReferences\": [],\n        \"additionalBrandPromoDiscount\": 0,\n        \"isUsedForDeliveryPromo\": false,\n        \"promoRedeemedInOrderId\": null,\n        \"promoRedeemedRuleId\": null,\n        \"yuOrderNotes\": null,\n        \"partOrdersWithWaivedOffDeliveryFee\": [],\n        \"deliveryFeeWaivedBy\": null,\n        \"isDeliveryBookingCreated\": false,\n        \"cancellationRequestInfo\": null,\n        \"goodwillCouponInfo\": null,\n        \"creditRedeemInfo\": null,\n        \"assignedFSA\": null,\n        \"delayDays\": null,\n        \"requestedDeliveryDate\": \"2026-03-27T00:00:00Z\",\n        \"deliveryRescheduleHistory\": [],\n        \"latestReschedule\": null,\n        \"discountSplits\": {}\n    }\n}"
+            }
+          ]
+        }
+      ],
+      "id": "ba89cee2-6659-4cb1-8fad-a5b31efc24cd"
+    },
+    {
+      "name": "Create Merchatn Store",
+      "id": "a3357758-f8cb-44a5-bbd5-4fdf4e2710b1",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "d0cdc9eb-4e01-41c5-8937-1a3f948f591c",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "id": "110d1106-e0bb-4bda-86ef-de2cbefb873f",
+            "exec": [
+              "const res = pm.response.json();\r",
+              "\r",
+              "if (res?.data?.authToken) {\r",
+              "    pm.environment.set(\"token\", res.data.authToken);\r",
+              "}"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "id": "3f15842b-e52c-47f0-8246-c81c180920e9",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"phoneNumber\": \"919039262550\",\r\n    \"verificationCode\": \"1234\",\r\n    \"userId\": \"e2d8e8ef-e548-4820-8691-753df2040aa9\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5005/OTP/verify",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5005",
+          "path": [
+            "OTP",
+            "verify"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

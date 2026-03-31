@@ -1,0 +1,33 @@
+{
+  "info": {
+    "_postman_id": "89e827e3-4a20-4e11-b019-ba6e920e5e45",
+    "name": "Yufin Supplier App",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Invoice Details",
+      "id": "4ea1d34a-2d14-4e50-844f-355bee102021",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Order Details",
+      "id": "e0efb9f8-c52b-4c85-b589-48276821d093",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    }
+  ]
+}

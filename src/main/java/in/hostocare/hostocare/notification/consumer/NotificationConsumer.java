@@ -18,6 +18,7 @@ public class NotificationConsumer {
     }
 
     private void sendEmail(NotificationEvent event) {
+
         // integrate email provider
         System.out.print("Email Notification: " + event.toString());
     }
@@ -26,6 +27,7 @@ public class NotificationConsumer {
         // integrate SMS provider
 
         System.out.print("SMS Notification: " + event.toString());
+
     }
 
     private void sendPush(NotificationEvent event) {
